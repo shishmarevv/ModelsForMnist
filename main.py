@@ -22,7 +22,7 @@ def parse_args():
     parser.add_argument("--lr", type=float, default=0.01)
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("-o", "--output_path", type=str, default="results", help="Path to save results")
-    parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu", help="Device to use for training")
+    parser.add_argument("--device", type=str, choices=['cuda', 'cpu'], default="cuda" if torch.cuda.is_available() else "cpu", help="Device to use for training")
     parser.add_argument("--model", type=str, choices=["mlp", "cnn"], default="mlp", help="Model architecture to use")
     parser.add_argument("-m", "--mode", type=str, choices=['cross-validation', 'retries'], default='cross-validation', help="Mode of operation: 'cross-validation' or 'retries'")
     return parser.parse_args()

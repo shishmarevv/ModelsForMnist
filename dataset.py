@@ -32,19 +32,28 @@ def get_loaders(batch_size=32, val_ratio=0.2, seed=42):
     train_loader = DataLoader(
         train_dataset,
         batch_size=batch_size,
-        shuffle=True
+        shuffle=True,
+        num_workers=8,
+        pin_memory=True,
+        persistent_workers=True
     )
 
     val_loader = DataLoader(
         val_dataset,
         batch_size=batch_size,
-        shuffle=False
+        shuffle=False,
+        num_workers=4,
+        pin_memory=True,
+        persistent_workers=True
     )
 
     test_loader = DataLoader(
         test_dataset,
         batch_size=batch_size,
-        shuffle=False
+        shuffle=False,
+        num_workers=4,
+        pin_memory=True,
+        persistent_workers=True
     )
 
     return train_loader, val_loader, test_loader
@@ -73,19 +82,28 @@ def get_cross_validation_loaders(batch_size=32, folds=5, seed=42):
         train_loader = DataLoader(
             train_dataset,
             batch_size=batch_size,
-            shuffle=True
+            shuffle=True,
+            num_workers=8,
+            pin_memory=True,
+            persistent_workers=True
         )
 
         val_loader = DataLoader(
             val_dataset,
             batch_size=batch_size,
-            shuffle=False
+            shuffle=False,
+            num_workers=4,
+            pin_memory=True,
+            persistent_workers=True
         )
 
         test_loader = DataLoader(
             test_dataset,
             batch_size=batch_size,
-            shuffle=False
+            shuffle=False,
+            num_workers=4,
+            pin_memory=True,
+            persistent_workers=True
         )
 
         yield train_loader, val_loader, test_loader
