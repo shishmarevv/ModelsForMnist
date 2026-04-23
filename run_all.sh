@@ -1,5 +1,5 @@
 set -e
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")"
 source .venv/bin/activate
 
 LOGS="./output/logs"
