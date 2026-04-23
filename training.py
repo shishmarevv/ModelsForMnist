@@ -78,7 +78,7 @@ def train(model, train_loader, val_loader, criterion, optimizer, device, num_epo
             no_improve_epochs = 0
             last_val_acc = val_acc
         
-        if no_improve_epochs >= num_epochs // 4:
+        if no_improve_epochs >= max(10, num_epochs // 3):
             print("Early stopping triggered")
             yield train_loss, train_acc, val_loss, val_acc
 
