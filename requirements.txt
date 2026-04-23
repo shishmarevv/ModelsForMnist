@@ -1,6 +1,6 @@
-matplotlib==3.10.8
-numpy==2.4.4
-scikit_learn==1.8.0
-tabulate==0.10.0
-torch==2.11.0
-torchvision==0.26.0
+matplotlib
+numpy
+scikit_learn
+tabulate
+torch
+torchvision
